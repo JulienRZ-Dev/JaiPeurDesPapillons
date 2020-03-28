@@ -1,0 +1,29 @@
+main{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 6px;
+
+	margin: 5rem;
+	margin-top: 0;
+}
+
+.illustrations{
+	max-width: 100%;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.illustrations:hover{
+	z-index: 1;
+	transform: scale(1.2, 1.2);
+}
+
+.modal{
+	width: 100%;
+}
+
+@media(min-width: 1200px){
+	main{
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
