@@ -1,0 +1,99 @@
+/* MOBILE PHONE */
+
+@media(max-width: 1000px) {
+
+  #section-cover{
+    height: 18rem;
+  }
+
+  #profile-picture{
+    height: 24rem;
+    top: 6rem;
+    right: calc(50% - 12rem);
+  }
+
+  #contact-adress-container{
+    max-width: 20%;
+    font-size: 1rem;
+  }
+
+  #contact-adress{
+    font-size: 1.4rem;
+  }
+
+  #contact-logos{
+    flex-direction: column;
+  }
+
+  .logos{
+    height: 4rem;
+  }
+
+  #section-contact{
+    margin-bottom: 2rem;
+  }
+
+  .home-section{
+    flex-direction: column;
+  }
+
+  .description{
+    width: 100%;
+  }
+
+  #section-middle{
+    flex-direction: column-reverse;
+  }
+
+  #advices-container{
+    background-image: url("../img/square_advices.jpg");
+    width: 40rem;
+  }
+}
+
+/* TABLET */
+
+@media(min-width: 1000px) and (max-width: 1300px) {
+
+  #section-cover{
+    height: 24rem;
+  }
+
+  #profile-picture{
+    height: 28rem;
+    top: 8rem;
+    right: calc(50% - 14rem);
+  }
+
+  #contact-adress-container{
+    max-width: 25%;
+    font-size: 1.25rem;
+  }
+
+    #contact-adress{
+      font-size: 1.6rem;
+    }
+
+  #contact-logos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #section-contact{
+    margin-bottom: 2rem;
+  }
+
+  .home-section{
+    flex-direction: column;
+  }
+
+  #section-middle{
+    flex-direction: column-reverse;
+  }
+
+  #advices-container{
+    background-image: url("../img/square_advices.jpg");
+    width: 40rem;
+  }
+}

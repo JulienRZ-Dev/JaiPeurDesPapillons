@@ -1,0 +1,11 @@
+/* MEDIA */
+@media(max-width: 1300px){
+
+  .card h1{
+    font-size: 2rem;
+  }
+
+  .card #numberOfSlides{
+    font-size: 1rem;
+  }
+}

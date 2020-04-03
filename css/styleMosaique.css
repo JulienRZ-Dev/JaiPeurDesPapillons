@@ -1,10 +1,9 @@
-main{
+#toFillWithContent{
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 6px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 0.7rem;
 
-	margin: 5rem;
-	margin-top: 0;
+	padding: 2rem 5rem 0 5rem;
 }
 
 .illustrations{
@@ -15,15 +14,13 @@ main{
 
 .illustrations:hover{
 	z-index: 1;
-	transform: scale(1.2, 1.2);
+	transform: scale(1.1, 1.1);
 }
 
 .modal{
 	width: 100%;
 }
 
-@media(min-width: 1200px){
-	main{
-		grid-template-columns: repeat(6, 1fr);
-	}
+#messageEnd{
+	color: black;
 }

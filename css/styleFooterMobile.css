@@ -1,0 +1,21 @@
+
+/* MEDIA */
+@media(max-width: 1300px){
+
+  #container-contact{
+    flex-direction: column;
+  }
+
+  #containerContactElina{
+    width: 100%;
+    align-items: center;
+    margin-bottom: 0;
+    margin: 1rem;
+  }
+
+  #containerContactJulien{
+    	width: 100%;
+    align-items: center;
+    margin: 1rem;
+  }
+}

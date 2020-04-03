@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JaiPeurDesPapillons - Tattoos</title>
-	<meta charset="utf-8" name="description" content="jaipeurdespapillons, tattoos à Toulouse, tu verras ici tous mes tatouages !
-	Contacte moi sur instagram ou par mail pour reserver le tien !">
+	<title>JaiPeurDesPapillons - Tattoo sur Toulouse</title>
+	<meta charset="utf-8" name="description" content="JaiPeurDesPapillons, tattoos à Toulouse, ici tous mes flashs !
+	Trouve ton flash et contacte moi sur instagram ou par mail pour le réserver !">
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styleMain.css">
 	<link rel="stylesheet" type="text/css" href="css/styleMainMobile.css">
-	<link rel="stylesheet" type="text/css" href="css/styleTattoos.css">
-	<link rel="stylesheet" type="text/css" href="css/styleTattoosMobile.css">
+	<link rel="stylesheet" type="text/css" href="css/styleFlash.css">
+	<link rel="stylesheet" type="text/css" href="css/styleFlashMobile.css">
 	<link rel="stylesheet" type="text/css" href="css/styleFooter.css">
 	<link rel="stylesheet" type="text/css" href="css/styleFooterMobile.css">
 </head>
 
-<!--Mobile First-->
-
 <body>
 	<header>
+		<!-- NAVBAR COLLAPSABLE -->
 		<nav class="navbar navbar-expand-xl navbar-light bg-light" id="navbar">
 			<!-- LOGO -->
 			<img src="img/icon.jpg" class="border rounded-circle m-3 logoProfile">
@@ -34,14 +33,14 @@
 					<li class="nav-item">
 						<a class="nav-link" href="index.html">Accueil</a>
 					</li>
-	  			<li class="nav-item">
-	  				<a class="nav-link" href="flashs.html">Flash</a>
+	  			<li class="nav-item active">
+	  				<a class="nav-link" href="flashs.html">Flash<span class="sr-only">(current)</span></a>
 	  			</li>
 	  			<li class="nav-item">
 	  				<a class="nav-link" href="illustrations.html">Illustrations</span></a>
 	  			</li>
-	  			<li class="nav-item active">
-	  				<a class="nav-link" href="tattoos.html">Tattoos<span class="sr-only">(current)</span></a>
+	  			<li class="nav-item">
+	  				<a class="nav-link" href="tattoos.html">Tattoos</a>
 	  			</li>
 	  		</ul>
 	  	</div>
@@ -50,15 +49,16 @@
 
 
 	<!-- MAIN -->
-	<main>
+	<main id="mainIndex">
 			<!-- CONTENT -->
-		<div id="toFillWithContent">
-			<!-- TO BE FILL WITH JS -->
-		</div>
+		<div class="container">
+			<div id="toFillWithContent" class="row">
+				<!-- TO BE FILL WITH JS -->
+			</div>
 		</div>
 		<!-- MESSAGE LOAD-->
 		<div id="messageContainer">
-			<button id="loadButton" class="btn btn-dark">Afficher plus de tattoos</button>
+			<button id="loadButton" class="btn btn-light">Afficher plus de flashs</button>
 		</div>
 	</main>
 
@@ -129,7 +129,6 @@
 		</div>
 	</footer>
 
-
 	<!-- CAROUSSEL -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -152,18 +151,18 @@
 				</div>
 	  	</div>
 		</div>
-	</body>
+</body>
 
 <!--Bootstrap, jQueries and script includes-->
 <script>
-	var tabTattoos = [];
-	var folder = "tattoos/";
+	var tabData = [];
+	var folder = "flash/";
 </script>
-<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script type="text/javascript" src="js/generateContentTattoos.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/caroussel.js"></script>
+<script type="text/javascript" src="js/generateContentFlash.js"></script>
 
 </html>

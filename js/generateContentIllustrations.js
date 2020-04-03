@@ -1,17 +1,41 @@
 $(document).ready(function(){
-	var tabURL =    ["demon", "Douze", "Etoile", "FleursDansLesCheveux", "FleursDansLesCheveux1", "FleursDansLesCheveux2", "Frida", "FullMetalJacket", "FullMetalTokyo", "KidsWithGun", "Noodle", "ProblemeDeBras", "Sailor", "Smoke", "Sorciere", "Sunset", "SuperMarket", "Susuki", "Toile", "Usagi", "fatale0", "fatale1", "fatale2", "fatale3", "fatale4", "fatale5", "fatale6", "fatale7", "tableau", "toiEtMoi"];
-
-	var container = document.getElementById("mainContainer");
+	var container = document.getElementById("toFillWithContent");
 	var tabContent = new Array();
+	var messageContainer = document.getElementById("messageContainer");
+	var loadButton = document.getElementById("loadButton");
+	var currentItemsDisplayed = 0;
 
-	for(let i=0; i < tabURL.length; i++){
-		tabContent[i] = document.createElement('div');
-		tabContent[i].innerHTML = `<img class="illustrations" src="illustrations/`.concat(tabURL[i]).concat(`.jpg" data-toggle="modal" data-target="#exampleModalCenter">`);
-		container.appendChild(tabContent[i]); 
+	init();
+	currentItemsDisplayed = nbIllustrations;
+	// Trigger the load of 20 tattoos pictures
+	display20();
+	// Click handler for loadButton
+	loadButton.onclick = display20;
+
+	// This function display 20 tattoos or less if we reach the end of items to display
+	function display20(){
+		let i = 0;
+		while(i < 20 && currentItemsDisplayed != 0){
+			currentItemsDisplayed--;
+			displayGraphicItem();
+			i++;
+		}
+		updateCaroussel();
+		if(currentItemsDisplayed == 0){
+			displayEndMessage();
+		}
 	}
 
-	$(".illustrations").click(function(){
-		console.log(this.src);
-		$("#toFill").attr("src", this.src);
-	});
+	// Display an info message : no more tattoos
+	function displayEndMessage(){
+		messageContainer.innerHTML = "<p id='messageEnd'>Tu as vu toutes les illustrations du site ! Suis moi sur Instagram pour en voir plus !</p>";
+	}
+
+	function displayGraphicItem(){
+		tabContent[currentItemsDisplayed] = document.createElement('div');
+		tabContent[currentItemsDisplayed].classList.add("item");
+		tabContent[currentItemsDisplayed].id = currentItemsDisplayed;
+		tabContent[currentItemsDisplayed].innerHTML = `<img class="illustrations" src="illustrations/`.concat(currentItemsDisplayed).concat(`.JPG" data-toggle="modal" data-target="#exampleModalCenter">`);
+		container.appendChild(tabContent[currentItemsDisplayed]);
+	}
 });

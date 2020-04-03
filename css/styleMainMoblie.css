@@ -1,0 +1,16 @@
+/* MEDIA */
+@media(max-width: 1300px){
+
+	#nav_title{
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.navbar a{
+		font-size: 3rem;
+	}
+
+	.modal-dialog{
+		width: 90%;
+	}
+}

@@ -1,0 +1,23 @@
+#mainIndex{
+	background-image: url("../img/background_bottom_purple.png"), url("../img/background_main_rainbow.jpg");
+	background-repeat: no-repeat, no-repeat;
+	background-position: bottom, top;
+	background-size: contain, cover;
+}
+
+/* CARDS */
+.card h1{
+	font-size: 1.5rem;
+}
+
+.card:hover{
+	transition: 0.3s ease-in-out;
+	box-shadow: 0 15px 15px rgba(0,0,0,0.6);
+}
+
+.card #numberOfSlides{
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	font-size: 1rem;
+}

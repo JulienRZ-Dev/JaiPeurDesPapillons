@@ -1,0 +1,118 @@
+#section-cover{
+  position: relative;
+  height: 26rem;
+  background-image: url("../img/background_cover.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+#profile-picture{
+  height: 34rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 8rem;
+  right: calc(50% - 16rem);
+}
+
+main{
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+#section-contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 12rem;
+}
+
+#contact-adress-container{
+  max-width: 30%;
+  transition: 0.3s ease-in-out;
+}
+
+#contact-adress{
+  font-size: 1.6rem;
+  font-family: 'Neucha', cursive;
+  text-decoration: none;
+  color: black;
+}
+
+#contact-adress-container:hover{
+  transform: scale(1.02, 1.02);
+}
+
+#contact-logos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logos{
+  height: 3rem;
+  width: auto;
+  transition: 0.5s;
+}
+
+.logos:hover{
+  z-index: 1;
+  transform: scale(1.2, 1.2);
+}
+
+.home-section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin: 2rem;
+  margin-top: 4rem;
+}
+
+.image-link{
+  height: 30rem;
+  width: auto;
+  transition: 0.5s;
+  padding: 2rem;
+}
+
+.image-link:hover{
+  z-index: 1;
+	transform: scale(1.2, 1.2);
+}
+
+.description{
+  width: 60%;
+  padding: 2rem;
+
+  font-family: 'Neucha', cursive;
+  font-size: 2rem;
+}
+
+hr{
+  margin-top: 4rem;
+  width: 90%;
+}
+
+h1{
+  padding: 2rem;
+  font-family: 'Neucha', cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+#advices-container{
+  width: 70rem;
+  height: 40rem;
+  margin: auto;
+  transition: 0.5s;
+
+  background-image: url("../img/mosaique_advices_rectangle.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#advices-container:hover{
+  z-index: 1;
+  transform: scale(1.05, 1.05);
+}

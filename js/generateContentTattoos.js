@@ -1,14 +1,42 @@
 $(document).ready(function(){
-	var tabURL =    ["abeille", "ak47", "bolNouille", "bonneNuit", "cancer", "chat", "chatOeil", "coeurOeil", "corpsFleur", "demonGeisha", "demonz", "dragon", "eva", "femmeSerpent", "filleBulle", "fougere", "gaara", "ginko", "grosChat", "guiness", "kaneki", "mainPlanete", "marguerite", "mononoke", "navet", "no", "non", "nuage", "oeilBig", "oeilFin", "oeilPoint", "peintureVenus", "peurDuNoir", "pilule", "poissonPleure", "poissonPoid", "pot", "pouvoir", "rose", "sansVisage", "seule", "sk8", "sorciere", "stevenUniverse", "tarotMononoke", "visageLigne", "yeux"];
-	var tabNumber = ["1",       "1",    "1",          "1",         "1",      "1",    "1",        "1",         "1",          "2",           "1",      "2",      "2",   "1",            "1",          "1",       "2",     "1",     "1",        "1",       "2",      "1",           "1",          "1",        "1",     "1",  "1",   "1",     "1",       "1",       "1",         "2",             "1",          "1",      "1",             "1",           "1",   "1",       "1",    "1",          "1",     "1",   "1",        "1",              "1",             "3",           "1"   ];                      
-
-	var container = document.getElementById("mainContainer");
+	var container = document.getElementById("toFillWithContent");
 	var tabContent = new Array();
+	var messageContainer = document.getElementById("messageContainer");
+	var loadButton = document.getElementById("loadButton");
+	var currentItemsDisplayed = 0;
 
-	for(let i=0; i < tabURL.length; i++){
-		console.log("hole");
-		tabContent[i] = document.createElement('div');
-		tabContent[i].innerHTML = `<img class="tattoos" src="tattoos/`.concat(tabURL[i]).concat(`0.jpg" alt="`).concat(tabURL[i]).concat(`" data-toggle="modal" data-target="#exampleModalCenter">`).concat(`<p class="info">`).concat(tabNumber[i]).concat(`</p>`);
-		container.appendChild(tabContent[i]); 
+	init();
+	currentItemsDisplayed = tabTattoos.length;
+	// Trigger the load of 20 tattoos pictures
+	display20();
+
+	// Click handler for loadButton
+	loadButton.onclick = display20;
+
+	// This function display 20 tattoos or less if we reach the end of items to display
+	function display20(){
+		let i = 0;
+		while(i < 20 && currentItemsDisplayed != 0){
+			currentItemsDisplayed--;
+			displayGraphicItem();
+			i++;
+		}
+		updateCaroussel();
+		if(currentItemsDisplayed == 0){
+			displayEndMessage();
+		}
+	}
+
+	// Display an info message : no more tattoos
+	function displayEndMessage(){
+		messageContainer.innerHTML = "<p id='messageEnd'>Tu as vu tous les tattoos du site ! Suis moi sur Instagram pour en voir plus !</p>";
+	}
+
+	function displayGraphicItem(){
+		tabContent[currentItemsDisplayed] = document.createElement('div');
+		tabContent[currentItemsDisplayed].classList.add("item");
+		tabContent[currentItemsDisplayed].id = currentItemsDisplayed;
+		tabContent[currentItemsDisplayed].innerHTML = `<img class="tattoos" src="tattoos/`.concat(currentItemsDisplayed).concat(`/0.JPG" data-toggle="modal" data-target="#exampleModalCenter">`);
+		container.appendChild(tabContent[currentItemsDisplayed]);
 	}
 });

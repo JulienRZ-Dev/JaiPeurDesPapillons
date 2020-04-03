@@ -1,0 +1,6 @@
+/* MEDIA */
+@media(max-width: 1300px){
+	#toFillWithContent{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

@@ -1,119 +1,55 @@
+:root{
+	--light: #F8F9FA;
+	--dark: #343A40;
+}
+
+*{
+	font-family: 'Baloo Thambi 2', cursive;
+}
+
 /* NAVBAR */
 .navbar{
 	box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+	z-index: 1;
 }
 
 .navbar a{
-	font-size: 300%;
+	font-size: 1.5rem;
 }
 
 .navbar-toggler-icon{
-	font-size: 200%;
+	font-size: 2rem;
 }
-/* COUVERTURE */
-.couverture{
-	text-align: center;
+
+#nav_title{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+/* DISPLAY MORE CONTAINER */
+#messageContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 4rem;
-	background-color: white; 
 }
 
-.couverture p{
-	font-size: 200%;
-}
-
-.couverture h1{
-	font-size: 300%;
-}
-
-/* CARDS */
-.card h1{
-	font-size: 300%;
-}
-
-.card:hover{
-	transition: box-shadow 0.3s ease-in-out;
-	box-shadow: 0 15px 15px rgba(0,0,0,0.6);	
-}
-
-.card #reserve{
-	position: absolute;
-	top: 0.5rem;
-	left: 0.5rem;
+#loadButton{
 	font-size: 2rem;
 }
 
-.card #numberOfSlides{
-	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
+#loadButton:hover{
+	transform: scale(1.1, 1.1);
+	transition: 0.3s ease-in-out;
+}
+
+#messageEnd{
 	font-size: 2rem;
-}
-
-/* MODAL */
-.modal-dialog{
-	max-width: 95%;
-}
-/* FOOTER */
-footer{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	padding: 3rem;
-}
-
-.contact{
-	font-size: 220%;
-}
-
-#containerContactElina{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-bottom: 3rem;
-}
-
-#containerContactJulien{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.rowRegular{
-	display: flex;
-}
-
-.rowReverse{
-	display: flex;
-	flex-direction: row-reverse;
-}
-
-.contact{
 	color: white;
-	margin: 1rem;
+	text-align: center;
 }
-
-.logos{
-	width: 5rem;
-	height: 5rem;
-	margin: 0.5rem;
-	border-radius: 0.5rem;
-}
-
-.logoProfile{
-	width: 10rem;
-}
-
-/* ALBULM */
-.albulm{
-	background-color: #e193a3;
-}
-
 
 /* CAROUSSEL */
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   height: 6rem;
@@ -127,85 +63,17 @@ footer{
 {
   content: '>';
   font-size: 4rem;
-  color: black;
+  color: var(--dark);
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
   font-size: 4rem;
-  color: black;
+  color: var(--dark);
 }
 
 
-
-/* MEDIA */
-
-@media(min-width: 1200px){
-
-	.navbar a{
-		font-size: 150%;
-	}
-
-	.card h1{
-		font-size: 150%;
-	}
-
-	.couverture p{
-		font-size: 150%;
-	}
-
-	.badge{
-		font-size: 0.3rem;
-	}
-
-	footer{
-		flex-direction: row;
-		padding: 2rem;
-	}
-
-	#containerContactElina{
-		align-items: flex-start;
-		margin-bottom: 0; 
-		margin: 1rem;
-	}
-
-	#containerContactJulien{
-		align-items: flex-end;
-		margin: 1rem;
-	}
-
-	.contact{
-		font-size: 130%;
-
-	}
-
-	.logos{
-		width: 3rem;
-		height: 3rem;
-	}
-
-	#logoProfile{
-		width: 14rem;
-	}
-
-	.rowRegular{
-		width: 100%;
-	}
-
-	.rowReverse{
-		width: 100%;
-	}
-
-	.card #reserve{
-		font-size: 1rem;
-	}
-
-	.card #numberOfSlides{
-		font-size: 1rem;
-	}
-
-	.modal-dialog{
-		max-width: 45%;
-	}
-
+/* CAROUSSEL */
+.modal-dialog{
+	max-width: 45%;
 }

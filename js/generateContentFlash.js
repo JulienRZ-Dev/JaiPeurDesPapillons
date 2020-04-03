@@ -1,30 +1,60 @@
 $(document).ready(function(){
-	var tabURL =    ["animalChat", "animalCrane", "animalMagique", "animalOs",  "animalSnake", "animeAkira", "animeCowboy",   "animeEva", "animeEvan",  "animeNana", "animeSailor", "animeSamourai",     "baiser", "cartoonNet", "craneFumer", "desenchantee", "dragonballTrunk", "femmeNue", "filleKatana", "fleurFlat", "gameBoy", "geisha3d",  "geishaBoard", "geishaBouche",  "geishaChat", "geishaDos", "geishaMasque", "geishaNue", "ghibliArriety", "ghibliHaku",     "ghibliPlanche",   "ghibliPonyo",    "ghibliPorco", "ghibliPorcoArriety", "ghibliSansVis", "japonDragon", "japonPlanche", "luneTraits", "masqueOni",  "masqueRenard", "masqueSamourai", "narutoAkatsuki", "narutoAmour", "narutoArme", "narutoBol", "narutoGaara", "narutoKonoha", "narutoSasuke",    "narutoSasukevs", "narutoSharingan", "oeilTraits", "oiseauGrue", "oiseauxTropic", "onePiece",  "phrase",   "planteCoeur", "plantePlanche",   "regard", "reprisePeinture",      "rondPlus",  "rondX",     "stevenUniverse",  "tarotHxh",    "tarotLkira", "tarotNaruto",     "tarotRocket",    "tarotSheeta",    "tarotZelda",   "tigreBlanc", "visageChien",       "visageMulti",  "visageOeil",     "fatale", "gorillaz", "batmanJoker",    "planche", "rickAndMorty",   "joker"       ];
-	var tabNom =    ["Chat",       "Crane",       "Crapaud",       "Mitsune",       "Luck Bone", "Serpent",     "Akira",      "Cowboy Beepop", "Eva 01",   "Rei",        "Nana",      "Sailor",      "Samourai Champloo", "Baiser", "Super Nana", "Feu",        "Desenchantée", "Trunk",           "Nue",      "Suzuki",      "Fleur",     "GameBoy", "Geisha 3D", "Théière",     "Boules de Riz", "Gei-Chat",   "Kimono",    "Oni",          "Tatouages", "Arriety",       "Haku x Chihiro", "Planches Ghibli", "Ponyo x Sosuke", "Porco Rosso", "Porco x Arriety",    "Sans Visage",   "Dragon",      "Plache Japon", "Lune",       "Masque Oni", "Renard",       "Samourai",       "Akatsuki",       "Amour",       "Kunai",      "Ramen",     "Gaara",       "Konoha",       "Naruto x Sasuke", "Battle",         "Sharingan",       "Oeil",       "Grue",       "Tropico",       "One Piece", "Palabras", "Coeur",       "Planche Plantes", "Regard", "Peintures et Etoiles", "Soleil .1", "Soleil .2", "Steven Universe", "Gon x Kirua", "Kira x L",   "Naruto x Sasuke", "Jessie x James", "Sheeta x Pazou", "Link x Zelda", "Tigre",      "Chien de la Casse", "Visage Peint", "Troisième Oeil", "Fatale", "Gorillaz", "Batman x Joker", "Planche", "Rick and Morty", "Joker"     ];
-	var tabNumber = ["1",          "1",             "2",             "1",         "1",           "4",          "2",             "2",        "2",          "2",         "1",           "2",                 "1",      "2",          "1",          "1",            "2",               "1",        "1",           "4",         "5",       "3",         "1",           "1",             "3",          "1",         "1",            "2",         "1",             "2",              "6",               "3",              "2",           "1",                  "2",             "1",           "1",            "3",          "6",          "2",            "2",              "1",              "1",           "1",          "2",         "1",           "1",            "1",               "1",              "1",               "2",          "2",          "4",             "3",         "6",        "1",           "1",               "1",      "7",                    "2",         "2",         "2",               "2",           "2",          "2",               "2",              "2",              "2",            "3",          "1",                 "4",            "1",              "7",      "3",        "2",              "1",       "6",              "1"    ];
-	var tabReserve =[false,        false,            false,          false,       false,         false,        false,           true,       false,        false,       false,         false,               false,    false,        false,        false,          false,             false,      false,         true,        false,     false,       false,         true,            false,        false,       false,          false,       false,           false,            false,             false,            false,         false,                false,           true,          false,          true,         false,        false,          false,            false,            false,         false,        false,       true,          false,          true,              false,            false,             false,        true,         false,           false,       false,      false,         false,             false,    false,                  false,       false,       false,             false,         false,        false,             false,            false,            false,          false,        false,               false,          false,            false,    false,      false,            false,     false,            false    ];
 	var container = document.getElementById("toFillWithContent");
+	var messageFlashContainer = document.getElementById("messageFlashContainer");
+	var loadButton = document.getElementById("loadButton");
 	var tabContent = new Array();
-	for(let i=0; i < tabURL.length; i++){
-		var reserve = `<span id="reserve" class="badge badge-pill badge-success">dispo</span>`
-		var info = `<span id="numberOfSlides" class="badge badge-pill badge-info">`.concat(tabNumber[i]).concat(`</span>`);
-		if(tabReserve[i]){
-			reserve = `<span id="reserve" class="badge badge-pill badge-danger">reserve</span>`
+	var currentItemsDisplayed; // Number of items currently displayed
+
+	// set tabData
+	init();
+	currentItemsDisplayed = tabData.length;
+	// Trigger the load of 20 flashs
+	display18();
+
+	// Click handler for loadButton
+	loadButton.onclick = display18;
+
+	// This function display 20 flashItems or less if we reach the end of items to display
+	function display18(){
+		let i = 0;
+		while(i < 18 && currentItemsDisplayed != 0){
+			currentItemsDisplayed--;
+			displayGraphicItem();
+			i++;
 		}
-		if(tabNumber[i] == 1){
-			info = `<span id="numberOfSlides" style="display: none;" class="badge badge-pill badge-info">`.concat(tabNumber[i]).concat(`</span>`);
+		updateCaroussel();
+		if(currentItemsDisplayed == 0){
+			displayEndMessage();
 		}
-		tabContent[i] = document.createElement('div');
-		tabContent[i].classList.add("col-lg-6");
-		tabContent[i].classList.add("col-xl-4");
-		tabContent[i].innerHTML =  `<div class="card m-4 text-center" data-toggle="modal" data-target="#exampleModalCenter">
-										<img src="flash/`.concat(tabURL[i]).concat(`0.jpg" class="card-img-top" id="imageToDisplay" alt="`).concat(tabURL[i]).concat(`">`)
-										.concat(info).concat(reserve).concat(`
-										<div class="card-body">
-											<h1 class="card-title">`).concat(tabNom[i]).concat(`</h1>`)
-											.concat(`
-										</div>
-									</div>`);
-		container.appendChild(tabContent[i]);
+	}
+
+	// Display an info message : no more flash
+	function displayEndMessage(){
+		messageContainer.innerHTML = "<p id='messageEnd'>Tu as vu tous les flashs du site ! Suis moi sur Instagram pour en voir plus !</p>";
+	}
+
+	// Write the html to display the graphic flashItem
+	function displayGraphicItem(){
+		//
+		var info = `<span id="numberOfSlides" class="badge badge-pill badge-info">`.concat(tabData[currentItemsDisplayed][1]).concat(`</span>`);
+		if(tabData[currentItemsDisplayed][1] == 1){
+			info = `<span id="numberOfSlides" style="display: none;" class="badge badge-pill badge-info">`.concat(tabData[currentItemsDisplayed][1]).concat(`</span>`);
+		}
+		// Cree l'element carte qui va representer graphiquement les flashItems
+		tabContent[currentItemsDisplayed] = document.createElement('div');
+		tabContent[currentItemsDisplayed].classList.add("col-md-12");
+		tabContent[currentItemsDisplayed].classList.add("col-lg-6");
+		tabContent[currentItemsDisplayed].classList.add("col-xl-4");
+		tabContent[currentItemsDisplayed].classList.add("item");
+		tabContent[currentItemsDisplayed].id = currentItemsDisplayed;
+		tabContent[currentItemsDisplayed].innerHTML =  `<div class="card m-4 text-center" data-toggle="modal" data-target="#exampleModalCenter">
+																											<img src="flash/`.concat(currentItemsDisplayed).concat(`/0.JPG" class="card-img-top" id="imageToDisplay" alt="`)
+																											.concat(tabData[currentItemsDisplayed][0]).concat(`">`).concat(info).concat(`
+																											<div class="card-body">
+																												<h1 class="card-title">`).concat(tabData[currentItemsDisplayed][0]).concat(`</h1>`)
+																												.concat(`
+																												</div>
+																											</div>`);
+		container.appendChild(tabContent[currentItemsDisplayed]);
 	}
 });

@@ -1,0 +1,57 @@
+/* FOOTER */
+#container-contact{
+	display: flex;
+	justify-content: space-between;
+	padding: 2rem;
+}
+
+.contact{
+	font-size: 1.6rem;
+}
+
+#containerContactElina{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 3rem;
+}
+
+#containerContactJulien{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.rowRegular{
+	display: flex;
+}
+
+.rowReverse{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: flex-start;
+}
+
+.contact{
+	color: white;
+	margin: 1rem;
+}
+
+.logos{
+	width: 3rem;
+	height: 3rem;
+	margin: 0.5rem;
+	border-radius: 0.5rem;
+}
+
+.logoProfile{
+	width: 10rem;
+}
+
+#footer-infos{
+	text-align: center;
+	font-size: 1.3rem;
+	color: white;
+	margin: 0;
+	padding: 1rem;
+}
